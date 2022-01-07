@@ -1,8 +1,7 @@
 from Manipulador import *
 from QRCode import *
 
-Manipulador = File_Manipuling()
-Manipulador.read_file()
+Manipulador = File_Manipuling("Planilha_Precos_Material_Escolar.csv")
 
 #Arrumando os valores numericos
 Manipulador.replace_columns(Manipulador.df.columns[1:], "R$ ", "")
@@ -17,7 +16,7 @@ imagens = list(map(QR, [f"{k} \t {v}" for k, v in Medias.items()])) #Montando as
 
 list(map(Salvar, imagens, [f"./Imagens/{N.replace(' ', '_').replace('/', '.')}.png" for N in Medias.keys()])) # Salvando as imagens
 
-Medias_Save = ""
+Medias_Save = "MEDIA DE VALORES DOS PRODUTOS\n"
 for k, v in Medias.items():
     Medias_Save += f"{k:>47} \t\t{v}\n"
 
