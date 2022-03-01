@@ -8,7 +8,7 @@ Manipulador.replace_columns(Manipulador.df.columns[1:], "R$ ", "")
 Manipulador.replace_columns(Manipulador.df.columns[1:], ",", ".")
 Manipulador.replace_columns(Manipulador.df.columns[1:], "-", "NaN")
 
-Manipulador.convert_columns_float32(Manipulador.df.columns[1:])#Convertendo os valores para float,        para mexer com valores
+Manipulador.convert_columns_float32(Manipulador.df.columns[1:])#Convertendo os valores para float, para mexer com valores
 
 Medias = Manipulador.lines_mean(Manipulador.df.columns[1:]) #Pega a media dos produtos
 
